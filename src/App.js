@@ -12,7 +12,7 @@ function App() {
             Charlotte Lee
           </a>{" "}
           and it is open-sourced on{" "}
-          <a href="" target="_blank">
+          <a href="https://github.com/charluxd/react-meteo-app" target="_blank">
             Github
           </a>
           .
