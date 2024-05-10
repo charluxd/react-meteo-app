@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 
 function Weather(props) {
@@ -7,8 +8,8 @@ function Weather(props) {
     console.log(response.data);
     setWeatherData({
       loaded: true,
-      city: "Singapore",
-      date: "Wednesday 07:00",
+      city: response.data.name,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -39,32 +40,7 @@ function Weather(props) {
             </div>
           </div>
         </form>
-        <h1>{weatherData.city}</h1>
-        <ul>
-          <li>{weatherData.date}</li>
-          <li className="text-capitalize">{weatherData.description}</li>
-        </ul>
-        <div className="row">
-          <div className="col-8 temperature-now">
-            <span>
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                className="temperature-icon"
-              ></img>
-            </span>
-            <span className="temperature-degree">
-              {Math.round(weatherData.temperature)}
-            </span>
-            <span className="temperature-unit">°C</span>
-          </div>
-
-          <div className="col-4">
-            <ul>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {Math.round(weatherData.wind)}km/h</li>
-            </ul>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData}/>
       </div>
     );
   } else {
