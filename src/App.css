@@ -5,6 +5,7 @@ body {
 
 h1 {
   color: #313638;
+  font-weight: 600;
 }
 
 .Weather {
@@ -43,11 +44,21 @@ form {
   border-radius: 8px;
 }
 
+/* .form-input:selected {
+  border: 1px solid #ea7270;
+} */
+
 .btn {
   font-weight: 600;
+  height: 40px;
   border-radius: 8px;
   background-color: #ea7270;
   border: #ea7270;
+}
+
+.btn:hover {
+  background-color: #ea5250;
+  border: #ea5250;
 }
 
 .temperature-now {
