@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import WeatherInfo from "./WeatherInfo";
-import axios from "axios";
+import React, { useState } from 'react';
+import WeatherInfo from './WeatherInfo';
+import WeatherForecast from './WeatherForecast';
+import axios from 'axios';
 
 function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
@@ -20,7 +21,7 @@ function Weather(props) {
   }
 
   function search() {
-    const apiKey = "04bde8cc7f569f7c5603cdbc6deb89a3";
+    const apiKey = '04bde8cc7f569f7c5603cdbc6deb89a3';
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -58,11 +59,12 @@ function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+        <WeatherForecast />
       </div>
     );
   } else {
     search();
-    return "Loading...";
+    return 'Loading...';
   }
 }
 

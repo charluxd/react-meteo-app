@@ -1,0 +1,8 @@
+.WeatherForecast {
+  text-align: center;
+}
+
+.WeatherForecast-temperature-min {
+  color: rgb(162, 162, 162);
+  margin-left: 8px;
+}
