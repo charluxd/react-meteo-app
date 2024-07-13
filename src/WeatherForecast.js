@@ -3,7 +3,7 @@ import WeatherIcon from './WeatherIcon';
 import './WeatherForecast.css';
 
 function WeatherForecast() {
-  let apiKey = 'ca80fb7d3o48t3c14460b13a3d83ca48';
+  let apiKey = '701f06352d61835bc4fc894e7b084629';
   let longtitude = '103.8519072';
   let lattitude = '1.2899175';
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lattitude}&lon=${longtitude}&appid=${apiKey}&units=metric`;
